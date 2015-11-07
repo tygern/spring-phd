@@ -1,4 +1,4 @@
-package com.tygern.phd.sample;
+package com.tygern.springphd;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +26,6 @@ public class Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
         logger.info("Connecting to database");
         Map<String, Object> resultMap = _jdbcTemplate.queryForMap("select now();");
-        logger.info( "Found " + resultMap.size() + " results" );
+        logger.info( "The time is " + resultMap.get("now") + ".");
     }
 }
